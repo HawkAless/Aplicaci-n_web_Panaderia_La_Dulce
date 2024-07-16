@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
+use App\Models\Cliente;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Pedido>
@@ -16,8 +17,11 @@ class PedidoFactory extends Factory
      */
     public function definition(): array
     {
+        $cliente = Cliente::inRandomOrder()->first();
+
         return [
-            //
+            'fecha_pedido' => $this->faker->dateTimeBetween('-1 year', 'now', 'UTC'),
+            "cliente_id" => $cliente->id
         ];
     }
 }

@@ -3,7 +3,6 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-use Illuminate\Support\Facades\DB;
 
 return new class extends Migration
 {
@@ -12,17 +11,18 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('pedidos', function (Blueprint $table) {
-            $table->id();
-            $table->datetime('fecha_pedido')->default(now());;
-            $table->unsignedBigInteger('cliente_id');
-            $table->foreign('cliente_id')
+
+        Schema::create('inventario', function (Blueprint $table) {
+            $table->unsignedBigInteger('product_id')->primary();
+            $table->integer('cantidad');
+            $table->foreign('product_id')
                 ->references('id')
-                ->on('clientes')
+                ->on('productos')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
             $table->timestamps();
         });
+        
     }
 
     /**
@@ -30,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('pedidos');
+        Schema::dropIfExists('inventarios');
     }
 };

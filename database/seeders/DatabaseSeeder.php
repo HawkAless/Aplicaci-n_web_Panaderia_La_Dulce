@@ -3,8 +3,10 @@
 namespace Database\Seeders;
 
 use App\Models\User;
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Cliente;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+
 
 class DatabaseSeeder extends Seeder
 {
@@ -13,16 +15,24 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        User::factory()->count(50)->create();
+        /*Primera Versión*/
 
-         User::factory()->create([
-             'name' => 'Test User',
-             'email' => 'test@example.com',
-             'type' => 'Recurrente'
-        ]);
+        /*User::factory()->count(50)->create();*/
+
+        /*Segunda Versión: Crea registros de Clientes asociados a un Usuario*/
+        //User::factory()->count(50)->has(Cliente::factory())->create();
+
+        //  User::factory()->create([
+        //      'name' => 'Test User',
+        //      'email' => 'test@example.com',
+        //      'type' => 'Recurrente'
+        // ]);
 
         
-        $this->call(ClienteSeeder::class);
+        //$this->call(ClienteSeeder::class);
+        //$this->call(PedidoSeeder::class);
+        //$this->call(CategoriaSeeder::class);
+        //$this->call(ProductoSeeder::class);
 
     }
 }
