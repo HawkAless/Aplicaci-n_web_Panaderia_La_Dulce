@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('nombre_producto');
             $table->text('descripcion');
             $table->decimal('precio', 8, 2);
+            $table->string('foto')->nullable();
             $table->unsignedBigInteger('categoria_id');
             $table->foreign('categoria_id')
                 ->references('id')

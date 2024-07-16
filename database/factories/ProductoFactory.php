@@ -19,12 +19,16 @@ class ProductoFactory extends Factory
     {
 
         $categoria = Categoria::inRandomOrder()->first();
-    
+
+        //Verificar que existan registros de categoria, sino crearlos
+        $categoriaId = $categoria ? $categoria->id : Categoria::factory()->create()->id;
+        
         return [
             "nombre_producto" => $this->faker->sentence(3),
             "descripcion" => $this->faker->text(),
             "precio" => $this->faker->randomFloat(2, 0, 999999.99),
-            "categoria_id" => $categoria->id,
+            "foto" => $this->faker->imageUrl(150, 130),
+            "categoria_id" => $categoriaId,
         ];
     }
 }

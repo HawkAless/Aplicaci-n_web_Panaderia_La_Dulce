@@ -11,7 +11,7 @@ class Producto extends Model
 
     protected $table = 'productos';
     protected $primaryKey = 'id';
-    protected $fillable = ['nombre_producto', 'descripcion', 'precio', 'categoria_id'];
+    protected $fillable = ['nombre_producto', 'descripcion', 'precio', 'foto', 'categoria_id'];
 
 
     public function inventario() {

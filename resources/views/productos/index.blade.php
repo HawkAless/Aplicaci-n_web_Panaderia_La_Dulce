@@ -135,134 +135,24 @@
     <main class="products container" id="lista-1">
         <h2>Productos destacados</h2>
         <div class="product-content">
-            <div class="product">
-                <img src="images/pan6.png" alt="">
-                <div class="product-txt">
-                    <h3>Producto</h3>
-                    <p class="precio">$15.00</p>
-                    <div class="product-actions">
-                        <div class="quantity-controls">
-                            <button class="decrement">-</button>
-                            <input type="number" value="1" min="1" class="quantity-input">
-                            <button class="increment">+</button>
+            @foreach($productos as $producto)
+                <div class="product">
+                    <img src="images/pan6.png" alt="">
+                    <div class="product-txt">
+                        <h3>{{ $producto->nombre_producto }}</h3>
+                        <p class="precio">{{ $producto->precio}}</p>
+                        <div class="product-actions">
+                            <div class="quantity-controls">
+                                <button class="decrement">-</button>
+                                <input type="number" value="1" min="1" class="quantity-input">
+                                <button class="increment">+</button>
+                            </div>
+                            <a href="#" class="agregar-carrito btn-2" data-id="1">Agregar</a>
                         </div>
-                        <a href="#" class="agregar-carrito btn-2" data-id="1">Agregar</a>
                     </div>
                 </div>
-            </div>
-
-            <div class="product">
-                <img src="images/pan3.png" alt="">
-                <div class="product-txt">
-                    <h3>Producto</h3>
-                    <p class="precio">$15.00</p>
-                    <div class="product-actions">
-                        <div class="quantity-controls">
-                            <button class="decrement">-</button>
-                            <input type="number" value="1" min="1" class="quantity-input">
-                            <button class="increment">+</button>
-                        </div>
-                        <a href="#" class="agregar-carrito btn-2" data-id="1">Agregar</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="product">
-                <img src="images/pan2.png" alt="">
-                <div class="product-txt">
-                    <h3>Producto</h3>
-                    <p class="precio">$15.00</p>
-                    <div class="product-actions">
-                        <div class="quantity-controls">
-                            <button class="decrement">-</button>
-                            <input type="number" value="1" min="1" class="quantity-input">
-                            <button class="increment">+</button>
-                        </div>
-                        <a href="#" class="agregar-carrito btn-2" data-id="1">Agregar</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="product">
-                <img src="images/pan9.png" alt="">
-                <div class="product-txt">
-                    <h3>Producto</h3>
-                    <p class="precio">$15.00</p>
-                    <div class="product-actions">
-                        <div class="quantity-controls">
-                            <button class="decrement">-</button>
-                            <input type="number" value="1" min="1" class="quantity-input">
-                            <button class="increment">+</button>
-                        </div>
-                        <a href="#" class="agregar-carrito btn-2" data-id="1">Agregar</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="product">
-                <img src="images/pan14.png" alt="">
-                <div class="product-txt">
-                    <h3>Producto</h3>
-                    <p class="precio">$15.00</p>
-                    <div class="product-actions">
-                        <div class="quantity-controls">
-                            <button class="decrement">-</button>
-                            <input type="number" value="1" min="1" class="quantity-input">
-                            <button class="increment">+</button>
-                        </div>
-                        <a href="#" class="agregar-carrito btn-2" data-id="1">Agregar</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="product">
-                <img src="images/pan11.png" alt="">
-                <div class="product-txt">
-                    <h3>Producto</h3>
-                    <p class="precio">$15.00</p>
-                    <div class="product-actions">
-                        <div class="quantity-controls">
-                            <button class="decrement">-</button>
-                            <input type="number" value="1" min="1" class="quantity-input">
-                            <button class="increment">+</button>
-                        </div>
-                        <a href="#" class="agregar-carrito btn-2" data-id="1">Agregar</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="product">
-                <img src="images/pan12.png" alt="">
-                <div class="product-txt">
-                    <h3>Producto</h3>
-                    <p class="precio">$15.00</p>
-                    <div class="product-actions">
-                        <div class="quantity-controls">
-                            <button class="decrement">-</button>
-                            <input type="number" value="1" min="1" class="quantity-input">
-                            <button class="increment">+</button>
-                        </div>
-                        <a href="#" class="agregar-carrito btn-2" data-id="1">Agregar</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="product">
-                <img src="images/pan13.png" alt="">
-                <div class="product-txt">
-                    <h3>Producto</h3>
-                    <p class="precio">$15.00</p>
-                    <div class="product-actions">
-                        <div class="quantity-controls">
-                            <button class="decrement">-</button>
-                            <input type="number" value="1" min="1" class="quantity-input">
-                            <button class="increment">+</button>
-                        </div>
-                        <a href="#" class="agregar-carrito btn-2" data-id="1">Agregar</a>
-                    </div>
-                </div>
-                </div>
-            </div>
+            @endforeach
+        </div>
     </main>
 
     <section class="service">
