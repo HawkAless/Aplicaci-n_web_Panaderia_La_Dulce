@@ -13,9 +13,9 @@ return new class extends Migration
     {
 
         Schema::create('inventario', function (Blueprint $table) {
-            $table->unsignedBigInteger('product_id')->primary();
+            $table->unsignedBigInteger('producto_id')->primary();
             $table->integer('cantidad');
-            $table->foreign('product_id')
+            $table->foreign('producto_id')
                 ->references('id')
                 ->on('productos')
                 ->onDelete('cascade')

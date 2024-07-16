@@ -28,11 +28,11 @@ class DatabaseSeeder extends Seeder
         //      'type' => 'Recurrente'
         // ]);
 
-        
-        //$this->call(ClienteSeeder::class);
-        //$this->call(PedidoSeeder::class);
-        //$this->call(CategoriaSeeder::class);
-        //$this->call(ProductoSeeder::class);
-
+        User::factory()->count(50)->has(Cliente::factory())->create();
+        $this->call(PedidoSeeder::class);
+        $this->call(InventarioSeeder::class);
+        $this->call(CategoriaSeeder::class);
+        $this->call(DetallesPedidoSeeder::class);
+     
     }
 }
