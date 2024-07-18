@@ -26,7 +26,7 @@ class ProductoFactory extends Factory
         return [
             "nombre_producto" => $this->faker->sentence(3),
             "descripcion" => $this->faker->text(),
-            "precio" => $this->faker->randomFloat(2, 0, 999999.99),
+            "precio" => $this->faker->randomFloat(2, 0, 99.99),
             "foto" => $this->faker->imageUrl(150, 130),
             "categoria_id" => $categoriaId,
         ];

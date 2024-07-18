@@ -137,7 +137,11 @@
         <div class="product-content">
             @foreach($productos as $producto)
                 <div class="product">
-                    <img src="images/pan6.png" alt="">
+                    @if (Storage::exists('public/'.$producto->foto))
+                        <img src="{{ asset('storage').'/'.$producto->foto }}" alt="" width="200">
+                    @else
+                        <img src="{{ asset('images/pan6.png') }}" alt="" width="200">
+                    @endif
                     <div class="product-txt">
                         <h3>{{ $producto->nombre_producto }}</h3>
                         <p class="precio">{{ $producto->precio}}</p>
